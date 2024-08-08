@@ -1,0 +1,21 @@
+<div class="container mt-5 pt-5">
+  <h1>Your To-Do List</h1>
+  
+  <!-- Check if there are no todos -->
+  <div *ngIf="todos.length === 0" class="text-center mt-5">
+    <img src="./assets/Nodata.webp" alt="No Data" style="max-width: 300px;">
+    <p>No todos available for the day.</p>
+  </div>
+
+  <!-- Display todos if available -->
+  <ul *ngIf="todos.length > 0" class="list-group">
+    <li *ngFor="let todo of todos; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
+      <div>
+        <strong>{{ todo.title }}</strong>
+        <p>{{ todo.desc }}</p>
+        <small>{{ todo.dueDate }} {{ todo.dueTime }}</small>
+      </div>
+      <button (click)="removeTodo(i)" class="btn btn-danger btn-sm">Remove</button>
+    </li>
+  </ul>
+</div>

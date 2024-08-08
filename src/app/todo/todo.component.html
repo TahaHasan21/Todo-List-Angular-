@@ -1,0 +1,31 @@
+<div class="container mt-5 pt-5">
+  <h1>To-Do List</h1>
+  
+  <!-- Task Input -->
+  <div class="input-group mb-3">
+    <input [(ngModel)]="newTodo" type="text" class="form-control" placeholder="Add your new task to-do">
+  </div>
+  
+  <!-- Description Input -->
+  <div class="input-group mb-3">
+    <input [(ngModel)]="newDesc" type="text" class="form-control" placeholder="Add description">
+  </div>
+  
+  <!-- Date and Time Inputs -->
+  <div class="row g-3 mb-3">
+    <div class="col-md-6">
+      <label for="dueDate" class="form-label">Due Date</label>
+      <input id="dueDate" [(ngModel)]="newDueDate" type="date" class="form-control">
+    </div>
+    <div class="col-md-6">
+      <label for="dueTime" class="form-label">Due Time</label>
+      <input id="dueTime" [(ngModel)]="newDueTime" type="time" class="form-control">
+    </div>
+  </div>
+  
+  <!-- Add Button -->
+  <button (click)="addTodo()" class="btn btn-success mb-3" type="button">Add</button>
+  
+  <!-- Check Your Todo List Button -->
+  <button *ngIf="todos.length > 0" (click)="navigateToYourTodos()" class="btn btn-primary mb-3 mx-2" type="button">Check Your Todo List</button>
+</div>
